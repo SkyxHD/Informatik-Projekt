@@ -1,5 +1,8 @@
 <template>
-  <div>This is the home page of my site</div>
+  <div>
+    <div class="welcome">Welcome to my site</div>
+    <div>This is the home page of my site</div>
+  </div>
   
 </template>
 
@@ -14,3 +17,13 @@ export default {
   // }
 }
 </script>
+
+<style>
+  .welcome{
+    background: #eee;
+    width: 95vw;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+</style>

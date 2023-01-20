@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <div>Welcome to my site!</div>
       <nav-bar />
       <router-view/>
     </div>
@@ -29,7 +28,7 @@ export default {
 }
 
 .wrapper {
-  max-width: 800px;
+  /* max-width: 800px; */
 }
 
 nav {
