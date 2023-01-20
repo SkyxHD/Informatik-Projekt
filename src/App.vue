@@ -27,9 +27,7 @@ export default {
   justify-content: center;
 }
 
-.wrapper {
-  /* max-width: 800px; */
-}
+
 
 nav {
   padding: 30px;
