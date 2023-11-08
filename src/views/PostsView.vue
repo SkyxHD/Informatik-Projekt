@@ -17,6 +17,7 @@
 
 
 <script>
+//import axios für GET requests usw.
 import axios from "axios"
 
 export default {

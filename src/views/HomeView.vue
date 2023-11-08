@@ -1,15 +1,13 @@
 <template>
   <div>
-    <div class="welcome">Welcome to my site</div>
-    <div>This is the home page of my site</div>
+    <div class="welcome">"Hier titel der website einfügen"</div>
+    <div>"Einleitung für website"</div>
   </div>
   
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
+//component wird eingefügt
 export default {
   name: 'HomeView',
   // components: {
