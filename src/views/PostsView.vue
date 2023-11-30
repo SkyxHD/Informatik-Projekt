@@ -12,6 +12,12 @@
       <div v-html="post.acf.newscontent"></div>
     </div>
 
+    <div class="create">
+
+      <router-link to="/createpost">Create Post</router-link>
+
+    </div>
+
   </div>
 </template>
 
@@ -61,5 +67,13 @@ export default {
 
 .image{
   margin: 20px 0;
+}
+.create {
+  display: flex;
+  justify-content: flex-end;
+  align-items: start-flex;
+  margin-right: 100px;
+
+
 }
 </style>
