@@ -5,7 +5,7 @@
 
     <div v-for="post in posts" :key="`post-${post.id}`" class="post">
       <div class="header">
-        <div >{{ post.title.rendered  }} ({{ new Date(post.date).toLocaleDateString("de-DE") }})</div>
+        <div >{{ post.acf.newstitle  }} ({{ new Date(post.date).toLocaleDateString("de-DE") }})</div>
         <div class="category">{{   post.acf.category }}</div> 
       </div>
       <img class="image" :src="post.image"/>
@@ -13,10 +13,11 @@
     </div>
 
     <div class="create">
-
-      <router-link to="/createpost">Create Post</router-link>
-
+      <router-link router-link to="/createpost">
+        <button class="button" type="button" >Create Post</button>
+      </router-link>
     </div>
+
 
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
   },
   async mounted() {
     this.loading = true
-    const { data } = await axios.get('http://news.com/wp-json/wp/v2/news')
+    const { data } = await axios.get('http://mysite.local/wp-json/wp/v2/news/142')
     for (let i = 0; i < data.length; i++) {
       const post = data[i]
       const { data: imageData } = await axios.get(post._links['wp:featuredmedia'][0].href)
@@ -68,12 +69,35 @@ export default {
 .image{
   margin: 20px 0;
 }
-.create {
+.button {
   display: flex;
   justify-content: flex-end;
   align-items: start-flex;
-  margin-right: 100px;
+  position: absolute;
+  top: 75px;
+  right: 50px;
+  width: 150px;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
 
 
 }
+
+.button {border-radius: 25px;}
+
+.button { 
+  background-color: white;
+  color: black;
+  border: 2px solid #04AA6D;
+}
+
+.button:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
 </style>
