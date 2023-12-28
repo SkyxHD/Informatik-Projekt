@@ -37,7 +37,7 @@ export default {
   },
   async mounted() {
     this.loading = true
-    const { data } = await axios.get('http://mysite.local/wp-json/wp/v2/news/142')
+    const { data } = await axios.get('http://mysite.local/wp-json/wp/v2/news')
     for (let i = 0; i < data.length; i++) {
       const post = data[i]
       const { data: imageData } = await axios.get(post._links['wp:featuredmedia'][0].href)
@@ -49,6 +49,7 @@ export default {
 }
 
 </script>
+
 <style scoped>
 .header{
   display: flex;
